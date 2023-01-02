@@ -1,6 +1,6 @@
 <script>
   let count = 0;
-  $: className = count === 0 ? null : (count > 0 ? "success" : "failure");
+  $: className = count === 0 ? 'counter' : (count > 0 ? "counter success" : "counter failure");
 
   function handleDecrement() {
     count -= 1;
@@ -13,11 +13,11 @@
   }
 </script>
 
-<div id="app">
+<div class="app">
   <div class="content">
-    <button on:click={handleDecrement}>-</button>
+    <button class="button" on:click={handleDecrement}>-</button>
     <div class={className} id="counter">{count}</div>
-    <button on:click={handleIncrement}>+</button>
+    <button class="button" on:click={handleIncrement}>+</button>
   </div>
-  <button on:click={handleReset}>Reset</button>
+  <button class="button" on:click={handleReset}>Reset</button>
 </div>
